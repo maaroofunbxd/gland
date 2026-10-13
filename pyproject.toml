@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gland"
+dynamic = ["version"]
+description = "Land a git worktree's branch onto the main checkout (gland), and a pre-push check plus git sync that keep pushed branches on top of upstream."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+completion = ["argcomplete"]
+
+[project.scripts]
+gland = "gland.land:main"
+git-sync = "gland.scripts:git_sync"
+gland-git-dir = "gland.scripts:git_dir"
+
+[dependency-groups]
+dev = ["pytest", "ruff"]
+
+[tool.setuptools.dynamic]
+version = { attr = "gland.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gland = ["git/pre-push", "git/git-sync"]
+
+# The test command gland runs in a worktree before landing it, and on main after.
+[tool.gland]
+test = "uv run pytest -q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["gland"]
