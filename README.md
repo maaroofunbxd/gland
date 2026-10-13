@@ -20,7 +20,7 @@ uv tool install "gland[completion] @ git+https://github.com/maaroofunbxd/gland" 
 
 That puts `gland`, `git-sync` (so `git sync` works) and `gland-git-dir` on PATH. Python 3.9 or newer, git and bash.
 The `completion` extra adds argcomplete (`eval "$(register-python-argcomplete gland)"`). As a dependency:
-`gland @ git+https://github.com/maaroofunbxd/gland@v0.1.0`.
+`gland @ git+https://github.com/maaroofunbxd/gland@v0.1.1`.
 
 The hook is a link in your global hooks folder, so it runs in every clone that doesn't set its own
 `core.hooksPath`:

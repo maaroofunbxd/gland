@@ -5,7 +5,7 @@ be copied anywhere and run as a script."""
 
 from pathlib import Path
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 GIT_DIR = Path(__file__).resolve().parent / "git"
 """Where pre-push and git-sync are installed: link the global hook and ~/.local/bin/git-sync here (README.md)."""
