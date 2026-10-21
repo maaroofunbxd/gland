@@ -7,6 +7,7 @@ name = "gland"
 dynamic = ["version"]
 description = "Land a git worktree's branch onto the main checkout (gland), and a pre-push check plus git sync that keep pushed branches on top of upstream."
 readme = "README.md"
+license = { text = "MIT" }
 requires-python = ">=3.9"
 dependencies = []
 
